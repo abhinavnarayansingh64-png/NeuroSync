@@ -1,0 +1,1 @@
+ALTER TABLE `userMemberships` ADD `status` enum('active','trialing','past_due','cancelled') DEFAULT 'active' NOT NULL;

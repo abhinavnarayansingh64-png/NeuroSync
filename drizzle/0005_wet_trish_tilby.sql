@@ -1,0 +1,2 @@
+ALTER TABLE `jobAssignments` MODIFY COLUMN `status` enum('reserved','awaiting_acceptance','queued','running','completed','failed','released') NOT NULL DEFAULT 'reserved';--> statement-breakpoint
+ALTER TABLE `trainingJobs` MODIFY COLUMN `status` enum('draft','awaiting_payment','awaiting_receiver','queued','provisioning','loading_dataset','running','paused','cancelling','completed','failed','cancelled') NOT NULL DEFAULT 'awaiting_payment';

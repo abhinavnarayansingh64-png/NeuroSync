@@ -1,0 +1,232 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply bg-base text-content-primary font-sans antialiased;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    background-image:
+      radial-gradient(circle at 84% -12%, rgba(255, 255, 255, 0.045), transparent 31rem),
+      radial-gradient(circle at -10% 64%, rgba(247, 240, 229, 0.025), transparent 34rem);
+    background-attachment: fixed;
+    /* Dominant body rhythm from the design system: Inter with slight tracking */
+    letter-spacing: 0.004em;
+  }
+
+  /* Headings use the Inter Tight (Roobert-substitute) display face with tight
+     negative tracking and restrained weight — authority through restraint. */
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: theme('fontFamily.display');
+    letter-spacing: -0.017em;
+  }
+
+  /* — Signal & Structure: reduced motion is a product requirement — */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* Consistent, visible focus states for accessibility (ink signal) */
+  :focus-visible {
+    outline: 2px solid theme('colors.accent.DEFAULT');
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Custom scrollbars tuned to the black signal field. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: theme('colors.border-strong');
+    border-radius: 8px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #81786d;
+    background-clip: content-box;
+  }
+
+  /* Remove number input spinners for a cleaner look */
+  input[type='number']::-webkit-inner-spin-button,
+  input[type='number']::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  /* Shared black surface treatment — the hairline border is the structure. */
+  .surface-card {
+    @apply bg-card border border-border rounded-xl;
+  }
+
+  /* Cream-filled controls always use dark ink. The named selector prevents
+     utility-generation order from making labels blend into the accent fill. */
+  .ns-solid-button {
+    color: #151310 !important;
+  }
+
+  /* Inline cream highlight carrying the headline's accent. */
+  .highlight-span {
+    color: theme('colors.accent.DEFAULT');
+  }
+
+  /* — Signal & Structure utility classes — */
+  /* Technical display face for job IDs, statuses, telemetry, diagram labels. */
+  .font-mono-tech {
+    font-family: 'JetBrains Mono', 'IBM Plex Mono', 'SF Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.02em;
+  }
+
+  /* Tabular numbers prevent layout shift while telemetry updates. */
+  .font-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Progress-bar / telemetry fill easing: smooth, never jarring, instant under reduced motion. */
+  .motion-out-fill {
+    transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  /* Quiet ruled-line texture for technical sections. */
+  .texture-ruled {
+    background-image: linear-gradient(to right, rgba(247, 240, 229, 0.055) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(247, 240, 229, 0.055) 1px, transparent 1px);
+    background-size: 48px 48px;
+  }
+
+  /* Registration-mark / quiet plotted texture. */
+  .texture-marks::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(rgba(247, 240, 229, 0.10) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* Visible-entrance baseline: elements are hidden until the observer reveals them. */
+  .ns-reveal {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+    transition:
+      opacity 0.36s cubic-bezier(0.23, 1, 0.32, 1),
+      transform 0.36s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .ns-reveal.is-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ns-reveal {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+  }
+
+  /* New-line arrival cue — subtle, non-blocking. */
+  .ns-line-new {
+    animation: ns-line-highlight 1.1s cubic-bezier(0.23, 1, 0.32, 1) both;
+  }
+  @keyframes ns-line-highlight {
+    0% {
+      background-color: rgba(247, 240, 229, 0.10);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ns-line-new {
+      animation: none;
+    }
+  }
+
+  /* A responsive black field for the WebGL strand layer on the public hero. */
+  .strand-stage {
+    background:
+      radial-gradient(circle at 82% 24%, rgba(255, 255, 255, 0.07), transparent 25rem),
+      radial-gradient(circle at 12% 100%, rgba(247, 240, 229, 0.055), transparent 26rem),
+      #090909;
+  }
+
+  .hero-strand-bridge { position: absolute; inset: 0 0 0 auto; width: min(59vw, 47rem); overflow: hidden; pointer-events: none; }
+  .hero-strand-field { position: absolute; inset: -12% -9%; opacity: 0.92; transform: rotate(-10deg) scale(1.13); transform-origin: center; -webkit-mask-image: radial-gradient(ellipse at 57% 48%, #000 22%, rgba(0,0,0,0.92) 50%, transparent 82%); mask-image: radial-gradient(ellipse at 57% 48%, #000 22%, rgba(0,0,0,0.92) 50%, transparent 82%); }
+  .hero-strand-route { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+  .hero-strand-route path { fill: none; stroke: rgba(247, 240, 229, 0.42); stroke-width: 1.35; stroke-dasharray: 4 7; }
+  .hero-strand-route circle { fill: #f7f0e5; filter: drop-shadow(0 0 8px rgba(247, 240, 229, 0.75)); }
+  .hero-device { position: absolute; display: flex; align-items: center; gap: 0.55rem; color: rgba(247, 240, 229, 0.88); font-family: 'JetBrains Mono', monospace; font-size: 0.56rem; letter-spacing: 0.11em; text-transform: uppercase; white-space: nowrap; }
+  .hero-device svg { width: 2.35rem; height: 2.35rem; padding: 0.45rem; border: 1px solid rgba(247, 240, 229, 0.28); border-radius: 0.55rem; background: rgba(9, 9, 9, 0.72); box-shadow: 0 0 24px rgba(247, 240, 229, 0.08); }
+  .hero-device-pc { bottom: 18%; left: 7%; }
+  .hero-device-gpu { top: 18%; right: 7%; flex-direction: row-reverse; }
+
+  @media (prefers-reduced-motion: reduce) { .hero-strand-field { transform: none; } }
+
+  .tactile-card {
+    isolation: isolate;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+    transition:
+      box-shadow 220ms cubic-bezier(0.23, 1, 0.32, 1),
+      border-color 220ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .tactile-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: radial-gradient(circle at 50% 0%, rgba(247, 240, 229, 0.13), transparent 58%);
+    opacity: 0;
+    transition: opacity 220ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  .tactile-card:hover {
+    border-color: theme('colors.accent.border');
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.34);
+  }
+
+  .tactile-card:hover::before {
+    opacity: 1;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .tactile-card,
+    .tactile-card::before {
+      transition: none;
+    }
+
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "neurosync",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "main": "electron/main.mjs",
+  "description": "NeuroSync — a persistent AI fine-tuning orchestration platform.",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.693.0",
+    "@aws-sdk/s3-request-presigner": "^3.693.0",
+    "@tanstack/react-query": "^5.90.2",
+    "@trpc/client": "^11.6.0",
+    "@trpc/react-query": "^11.6.0",
+    "@trpc/server": "^11.6.0",
+    "axios": "^1.12.0",
+    "cookie": "^1.0.2",
+    "dotenv": "^17.2.2",
+    "drizzle-orm": "^0.44.5",
+    "express": "^4.21.2",
+    "jose": "^6.1.0",
+    "mysql2": "^3.15.0",
+    "nanoid": "^5.1.5",
+    "ogl": "^1.0.11",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
+    "stripe": "^22.5.0",
+    "superjson": "^1.13.3",
+    "zod": "^4.1.12"
+  },
+  "packageManager": "pnpm@10.4.1"
+}

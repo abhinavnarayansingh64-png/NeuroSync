@@ -1,0 +1,213 @@
+# NeuroSync Full-Stack Upgrade Checklist
+
+- [x] Define persistent domain entities and ownership rules for users, models, receivers, jobs, events, and payment records.
+- [x] Upgrade the project to support managed authentication, database storage, and server APIs.
+- [x] Replace browser-only authentication and local persistence with authenticated backend services.
+- [x] Implement server endpoints for sender, receiver, model, job, event, and settlement workflows.
+- [x] Connect existing pages to the persistent API while retaining the Signal & Structure motion system.
+- [x] Add a server-driven job lifecycle simulator and secure worker-integration contract for external GPU training.
+- [x] Define a provider-neutral submission, status, cancellation, and artifact contract for external GPU services.
+- [x] Implement secure credential storage and signed callback verification for GPU provider events.
+- [x] Implement an initial external GPU provider adapter with a documented activation path.
+- [x] Verify the credential-ready provider adapter has all runtime dependencies required for external dispatch.
+- [x] Implement server-side simulated training transitions and telemetry until external GPU credentials are configured.
+- [x] Add an explicit simulation-mode indicator and preserve a no-code-switch credential activation path for RunPod.
+- [ ] Verify authentication, cross-session persistence, authorization, job updates, and error states.
+- [x] Replace obsolete local credential forms with managed OAuth entry points.
+- [x] Document required credentials and activation steps for a real GPU compute provider.
+- [x] Remove the unsupported testimonial card from the public landing page.
+- [x] Restore the missing typed error dependency in protected job workflow error paths.
+- [x] Add a mocked regression test for the configured RunPod dispatch contract.
+- [x] Prevent server simulation polling from advancing jobs once external GPU mode is active.
+- [x] Persist workspace settings and completed-job settlement state through authenticated server APIs instead of browser-local storage.
+- [x] Migrate the new-job receiver and model catalog from local demo modules to the persistent server directory.
+- [x] Add a consistent external-versus-simulation indicator to job-monitoring screens, including job details.
+- [x] Persist simulation metric history on the server and render monitoring charts only from server-owned telemetry.
+- [x] Add the execution-mode badge to reusable job summary cards and receiver monitoring views.
+- [x] Restore preview-session hydration and verify that authenticated preview requests reach the persisted role-selection workflow; use the published domain for browser OAuth redirects.
+- [x] Replace the near-black cyan visual system with a more visibly differentiated color-led public and workspace UI refresh.
+- [x] Replace legacy cyan and warm-black literals in shared diagrams, charts, and brand visuals with the indigo-orchid color system.
+- [x] Visually verify an authenticated workspace onboarding surface after the palette refresh and resolve legacy-color mismatches.
+- [x] Resolve the preview workspace-settings restoration state so authenticated dashboard verification can complete.
+- [ ] Verify managed OAuth on the published NeuroSync domain and record the exact browser return result.
+- [ ] Verify in a live authenticated browser session that the dashboard renders after role selection and record the resulting route and server-backed state.
+- [x] Re-test the preview hydration fallback with an authenticated session and record the transition beyond settings restoration.
+- [ ] Verify in a live authenticated browser session that Premium & billing loads past settings hydration and record the visible Free-plan state.
+- [x] Replace the indigo-orchid visual system with a tactile cream, white, and near-black palette across public and workspace views.
+- [x] Add an accessible, reduced-motion-aware animated strands treatment to the landing page.
+- [x] Add a restrained tactile highlight treatment to prominent landing cards without compromising readability or application workflows.
+- [x] Audit the final strand implementation for explicit reduced-motion and accessibility safeguards.
+- [x] Capture and review the signed-out landing route to verify strand rendering and tactile-card readability before publishing.
+- [x] Keep the landing hero near-black while aligning the compute-chip animation to the animated strand field.
+- [x] Add the supplied edge-hover treatment to landing cards with keyboard-equivalent focus feedback.
+- [x] Add a reduced-motion-aware scroll-expansion interaction to the landing narrative.
+- [x] Audit edge-hover cards for keyboard focus-visible parity and document the verified behavior.
+- [x] Audit scroll expansion for reduced-motion handling and visually verify its expanded landing state.
+- [x] Capture the normal-motion scroll-expansion panel at full width and record the verified expansion state.
+- [x] Measure and capture the scroll-expansion panel at `--scroll-expand: 1` in normal-motion mode.
+- [x] Convert public landing surfaces to a predominantly black system with cream/white restricted to typography, borders, and restrained highlights.
+- [x] Remove the competing landing compute-chip block so the animated strands remain the hero focal point.
+- [x] Replace all remaining pink/orchid cursor-glow values with a monochrome cream/white treatment.
+- [x] Reorient the landing strands into the right-side negative space and resolve their ends into clear GPU and PC endpoints.
+- [x] Correct all landing button foreground/background contrast so label text remains readable in every state.
+- [x] Repair unstable animation behavior across the three lower landing cards while retaining reduced-motion safeguards.
+- [x] Replace the vague connected-compute visual with a clear, operational GPU-to-PC routing interface.
+- [x] Restore the original animated strand aesthetic in the hero and remove the added static route bundle.
+- [x] Audit every shared and landing button variant, including hover, focus, disabled, and solid states, for legible foreground/background contrast.
+- [ ] Verify primary, secondary, ghost, danger, and danger-solid buttons in default, hover, focus-visible, and disabled states on public and workspace routes.
+- [x] Audit remaining raw controls outside the shared button primitive, including menus, selectors, back actions, drawers, and settings cards, for low-contrast combinations.
+- [x] Add regression coverage for shared button-state contrast beyond solid controls.
+- [ ] Verify raw menu triggers, drawer actions, selector toggles, back controls, and settings role cards for default, hover, focus, and disabled contrast on public and authenticated routes.
+- [x] Correct the managed sign-in button so its label remains dark and readable on the cream fill.
+- [x] Stack the hero endpoint labels with PC above Job source on the left and GPU above Receiver on the right.
+- [x] Add restrained signal-color accents to the endpoint status details without changing the black-first theme.
+- [x] Prevent public unsigned routes from stalling on workspace-settings restoration by scoping workspace hydration to protected routes.
+- [x] Replace the authenticated full-screen workspace-settings restoration state with non-blocking shell hydration.
+- [x] Calibrate Gemma 2B estimates so an RTX 4090 24 GB reference run is presented as 10–15 minutes under the documented reference workload.
+- [x] Constrain base-model fees to the 100–300 range and GPU hourly pricing to the 30–60 range throughout the persistent catalog and sender UI.
+- [x] Apply consistent available, busy, and offline receiver states in green, yellow, and red without changing the black-first theme.
+- [x] Persist receiver heartbeats, device capability reports, availability, and assignments so senders see cross-device receiver state changes.
+- [x] Support atomic receiver reservation and busy-state propagation when a sender starts a job.
+- [x] Add a premium entitlement and training-mode choice between single-GPU and distributed fine-tuning.
+- [x] Support distributed job definitions with receiver selection, dataset partitions, checkpoint tracking, fault recovery, and per-step or adaptive synchronization strategy.
+- [x] Add test coverage and documentation for cross-device receiver state, pricing bounds, premium access, and the browser-receiver boundary.
+- [x] Add Stripe Premium checkout and signed webhook entitlement activation without storing sensitive payment data.
+- [x] Select the browser-receiver architecture for this release and defer the local CUDA agent path for a future verified-hardware upgrade.
+- [x] Label browser-reported receiver hardware as self-reported across the receiver and sender workflows.
+- [x] Refresh sender receiver availability from the shared live directory every four seconds instead of relying on a stale one-time catalog query.
+- [x] Persist and expose distributed dataset partition, checkpoint, and worker-recovery details beyond initial receiver assignment.
+- [x] Add regression tests that prove free memberships cannot create distributed jobs while active Premium and trial memberships can.
+- [x] Build a dedicated Premium membership page that shows plan status and usage, starts Checkout, and routes users to billing management for cancellation or revocation.
+- [x] Raise supported JSON dataset upload size to 500 MB and surface the file-size limit in the uploader.
+- [x] Recalculate training duration and price estimates from the uploaded dataset size and record count so 10 MB, 50 MB, and larger datasets produce visibly different estimates.
+- [x] Correct wizard step-number and text contrast across default, current, and completed states.
+- [x] Remove legacy dummy receiver records and give receiver owners a safe control to retire stale browser registrations that preserve obsolete default VRAM; verified zero unowned receivers remain in the live directory.
+- [x] Correct sender-facing receiver identity rendering and coordinate status labels with card content.
+- [x] Repair Checkout and job-start transitions so job authorization waits for dataset upload and dispatch instead of leaving a simulated payment pending.
+- [x] Show coordinated job progress, dataset-transfer state, and assignment failure/recovery information in the receiver dashboard as well as the sender dashboard.
+- [x] Add an explicit receiver-side dataset download flow with user consent, transfer progress, and clear browser-storage limitations.
+- [x] Hide receiver dataset downloads for completed, failed, cancelled, and otherwise inactive assignments in both the UI and secure endpoint.
+- [x] Replace receiver-side availability controls with a read-only coordinator-controlled availability indicator.
+- [x] Fix dataset upload authorization reliability and replace per-byte-looking progress behavior with clear staged upload and authentication feedback.
+- [x] Calculate and display receiver earnings from completed assignments in the receiver dashboard using persisted elapsed runtime and the receiver's configured hourly rate.
+- [ ] Verify in a live authenticated browser session that direct Premium and receiver routes remain in the workspace after removing the onboarding redirect.
+- [x] Preserve a coordinator-reserved busy receiver state when its browser heartbeat continues during an assigned job.
+- [x] Fix the training-dispatch contract so stored dataset keys and relative storage paths never fail the `datasetUrl` URL validator.
+- [x] Repair the Premium trial action so an eligible Free-plan user can activate a trial without an invalid membership-state failure.
+- [x] Correct topology and training-configuration step-number contrast on desktop and mobile form layouts.
+- [x] Show receiver-side live progress that mirrors the assigned job’s current coordinator telemetry, including receiver-owned simulation advancement when the sender dashboard is closed.
+- [x] Calculate and display projected receiver earnings while an assigned job is ongoing, then reconcile them to completed-job earnings.
+- [x] Align receiver accrued earnings to a 70% sender base-fee share plus progress-proportional sender usage earnings, and project final payout from the sender-visible estimate.
+- [x] Surface live receiver accrued and projected earnings in the receiver console and final receiver dashboard totals.
+- [x] Add a receiver Auto-accept or Manual approval setting persisted per receiver.
+- [x] Hold manually assigned jobs in a receiver-approval state so sender execution cannot begin until the receiver accepts.
+- [x] Trigger receiver-side dataset download immediately after acceptance and expose persisted acceptance and download states to both sender and receiver.
+- [x] Expose receiver acceptance and dataset download started/completed state in sender-facing job details and cover sender/receiver transfer visibility with regression tests.
+- [x] Correct Start 14-day trial button contrast across default, hover, focus, loading, and disabled states.
+- [x] Correct Manual approval toggle contrast and make its persisted mode update reliably in the receiver console.
+- [x] Correct receiver coordinator-state updates so the console reflects available, busy, and offline reservation state in real time.
+- [x] Render a distinct offline coordinator-state label and message when a receiver heartbeat expires.
+- [x] Replace the Auto/Manual segmented control with a visible accessible approval-mode switch.
+- [x] Refresh receiver coordinator state from live reservation and heartbeat records without stale local fallback.
+- [x] Make the coordinator query authoritative after enrollment and add explicit loading and error handling instead of rendering stale directory state.
+- [x] Make workspace startup respect the saved sender, receiver, or both role instead of always opening the sender dashboard.
+- [x] Make Logout clear the authenticated session and return to the public landing page without reopening the workspace.
+- [x] Reconcile a receiver with no live assignment from stale Busy to Available immediately and safely.
+- [x] Release expired receiver reservations for abandoned pre-dispatch jobs without releasing genuine active training.
+- [x] Add behavior-level regression coverage for Busy-to-Available recovery through coordinator-state and heartbeat flows.
+- [x] Make expired-reservation cleanup atomic so a job that concurrently advances to active training cannot be released.
+- [x] Add integration-level coverage for coordinator-state and heartbeat recovery of stale Busy reservations while preserving active jobs.
+- [x] Add heartbeat-flow behavior coverage that recovers an abandoned stale Busy reservation to Available.
+- [x] Add heartbeat-flow behavior coverage that preserves Busy for active training after reservation expiry.
+- [x] Remove the receiver approval slider and use the existing acceptance action as the single approval control.
+- [x] Start the receiver dataset download immediately on acceptance and block dispatch until the transfer is complete or reports a clear error.
+- [x] Hide receiver dataset download actions after a job has entered running state.
+- [x] Keep receiver coordinator state and assignments synchronized through acceptance and running transitions without requiring a browser reload.
+- [x] Fix receiver address fetch failures in sender job creation and show recoverable state when receiver data is temporarily unavailable.
+- [x] Clear receiver download-pending UI after browser handoff so a failed transfer can be retried without reloading.
+- [x] Remove receiver approval controls, approval-gated job states, and acceptance actions from the user-facing workflow.
+- [x] Remove receiver dataset-transfer/download controls, endpoint use, transfer persistence, and dispatch gating from the user-facing workflow.
+- [x] Preserve immediate receiver reservation, job dispatch, coordinator state, live progress, and accrued/projected earnings after simplifying the workflow.
+- [x] Correct the supplied technology-stack visual to match the implemented NeuroSync client, server, data, auth, billing, storage, and GPU-adapter stack.
+- [x] Verify every rendered technology-stack label against the implemented NeuroSync stack before delivery.
+- [x] Record the exact rendered technology-stack labels and confirm they match the implemented stack.
+- [x] Review the attached requested change list and translate each approved item into a code-verifiable NeuroSync task.
+- [x] Persist receiver job offers with explicit pending, accepted, running, completed, failed, and cancelled lifecycle states.
+- [x] Restore an idempotent receiver acceptance action that atomically claims a pending offer and prevents duplicate dispatch.
+- [x] Restore receiver-side dataset delivery after acceptance, with durable transfer state and clear failure handling.
+- [x] Keep sender and receiver job views synchronized from the same persisted assignment and job records without reload.
+- [x] Reconcile receiver online, busy, and offline state from heartbeat, active-assignment, and agent-connectivity evidence without stale fallback.
+- [x] Add truthful GPU telemetry reporting through an opt-in local receiver-agent boundary; never claim browser-only hardware detection is authoritative.
+- [x] Improve receiver dashboard connection feedback, primary active-job hierarchy, earnings summary, and job history presentation.
+- [x] Repair sender receiver discovery errors with retryable query states and no duplicate receiver records.
+- [x] Add lifecycle, concurrency, reconnect, transfer, and sender-receiver visibility regression coverage.
+- [x] Extend the optional localhost receiver agent to expose verified GPU model, total/used VRAM, utilization, and availability from actual NVIDIA telemetry where available.
+- [x] Keep browser-only receiver telemetry explicitly agent-offline and never substitute self-reported or simulated GPU hardware.
+- [x] Add a focused receiver Overview route containing only coordinator state, current-period earnings, and the primary active offer/download/running job experience.
+- [x] Move completed, failed, and cancelled receiver assignments into a dedicated persisted Job History route without duplicating them on Overview.
+- [x] Add server-derived receiver earnings aggregates and job statistics for today, week, month, lifetime, and selected timeline windows.
+- [x] Add an Earnings & Analytics receiver route with actual-value trend visualization and calculable job performance metrics.
+- [x] Add clear receiver navigation among Overview, Job History, and Earnings & Analytics while preserving the existing visual language.
+- [x] Preserve offer acceptance, actual protected transfer, transfer-gated dispatch, polling reconciliation, and central payout behavior while restructuring receiver views.
+- [x] Add regression coverage for agent-offline/verified telemetry, focused history separation, authoritative analytics, and receiver route synchronization.
+- [x] Diagnose and document the existing receiver browser-to-local-agent-to-NVIDIA telemetry boundary without treating the cloud backend as host GPU access.
+- [x] Provide a Windows-startable local receiver agent with only loopback health, status, and GPU telemetry endpoints.
+- [x] Query actual NVIDIA model, total/used VRAM, and utilization from nvidia-smi on every GPU telemetry request, with explicit diagnostics when unavailable.
+- [x] Restrict the local agent CORS policy to configured NeuroSync origins and bind it only to 127.0.0.1.
+- [x] Add browser automatic reconnect, telemetry freshness, endpoint diagnostic, and agent-versus-NVIDIA failure reporting on the receiver workspace.
+- [x] Persist only verified local-agent telemetry to the receiver record and never infer hardware from browser or manual input.
+- [x] Add Windows setup files and exact commands for running and testing the receiver agent without source edits.
+- [x] Add regression coverage for real-agent API shape, no-fake fallback, disconnect/reconnect behavior, CORS boundary, and retained job lifecycle behavior.
+- [ ] Verify on the user’s Windows receiver that `nvidia-smi` executes and reports the actual NVIDIA adapter.
+- [ ] Verify on the user’s Windows receiver that `start_receiver_agent.bat` starts a loopback-only service on `127.0.0.1:47831` with clear terminal diagnostics.
+- [ ] Verify on the user’s Windows receiver that `/health` returns HTTP 200 and `/gpu` returns actual, non-hardcoded GPU telemetry.
+- [ ] Verify on the user’s Windows receiver that the receiver dashboard reconnects without refresh and displays only the verified GPU telemetry.
+- [x] Add a reusable normalized browser GPU detection service using WebGPU first, WebGL second, and capability-only fallback when identity is withheld.
+- [x] Keep browser-detected identity, browser-exposed limits, verification status, and runtime telemetry as distinct truthful fields.
+- [x] Register browser-detected receiver GPU capabilities automatically without manual model or VRAM entry and without claiming them as verified.
+- [x] Make the receiver Overview useful without a local agent, while showing the local agent only as an optional verification and runtime-telemetry enhancement.
+- [x] Preserve exact VRAM and real utilization as unavailable unless a browser genuinely exposes them or the optional agent verifies them.
+- [x] Add contract coverage for WebGPU, WebGL, restricted-browser fallback, no-fabrication behavior, and optional-agent precedence.
+- [x] Classify Microsoft Basic Render Driver, SwiftShader, llvmpipe, software adapters, and other known software renderers as non-physical GPU results.
+- [x] Ensure browser GPU normalization records source, software-renderer status, exact-model availability, and verification independently from a renderer string.
+- [x] Prevent software-renderer strings and unexposed browser VRAM from being registered or displayed as physical GPU model and zero VRAM.
+- [x] Show a focused GPU-only browser limitation state and WebGPU diagnostic details when Chrome exposes only a software/fallback adapter.
+- [x] Preserve receiver registration when browser hardware identity is unavailable, storing detection state separately from physical model.
+- [x] Add targeted regression coverage for Microsoft Basic Render Driver rejection, WebGPU precedence, unknown VRAM, and capability-only registration.
+- [ ] Verify the corrected behavior in the user’s RTX 3050 browser session or record the honest browser-hidden fallback result.
+- [x] Request the WebGPU adapter with `powerPreference: "high-performance"` and retain the configured preference in normalized diagnostics.
+- [x] Read `adapter.info` vendor, architecture, device, description, and fallback status without invoking deprecated adapter-info APIs or inventing identity.
+- [x] Normalize actual WebGPU features and relevant adapter limits without converting them into CUDA, model, or VRAM claims.
+- [x] Replace any 0.00 GB browser VRAM display with an explicit unavailable state when exact physical memory is not exposed.
+- [x] Add a GPU-card-only WebGPU diagnostics section with adapter result, high-performance preference, raw info availability, fallback status, features, and important real limits.
+- [x] Add narrow regression coverage for high-performance adapter selection, adapter-info handling, VRAM-unavailable display, fallback classification, and capability diagnostics.
+- [ ] Record actual RTX 3050 `adapter.info` values only after the user opens the updated receiver dashboard in their own Chrome session.
+- [x] Preserve the existing web application as a complete sender-only web interface using the existing backend and database.
+- [x] Add an Electron desktop shell that reuses NeuroSync’s React design system and authenticates against the existing shared backend.
+- [x] Add an explicit desktop startup role selector for Sender and Receiver modes without creating a second job schema or database.
+- [x] Implement native desktop receiver inventory for GPU, VRAM, GPU utilization, system RAM, CPU, storage, platform, architecture, NVIDIA driver, CUDA, and available PyTorch CUDA status.
+- [x] Use real local NVIDIA telemetry through nvidia-smi for actual model, memory, utilization, temperature, and power values when available; never use WebGPU/WebGL or manual input for desktop hardware identity.
+- [x] Expose desktop hardware and telemetry to the renderer through a minimal secure preload bridge without enabling arbitrary Node access in the UI.
+- [x] Add a desktop receiver hardware and fine-tuning readiness section that evaluates persisted model/training metadata against real available GPU memory, RAM, CUDA, and storage without inventing requirements.
+- [x] Register desktop receiver hardware profiles and periodic verified telemetry with the existing receiver, heartbeat, assignment, and marketplace backend flow.
+- [x] Retain sender dataset management, model selection, job configuration, receiver marketplace, job monitoring, costs, analytics, and history in desktop Sender mode by reusing existing UI/routes.
+- [x] Add desktop integration and native telemetry contract coverage, package scripts, Windows launch/build documentation, and honest real-device validation instructions.
+- [ ] Verify the Windows Electron desktop app on the user’s RTX 3050: OAuth, Sender/Receiver session selection, native Hardware profile, heartbeat/marketplace state, offer/transfer/dispatch visibility, and server-derived earnings.
+- [ ] Produce and install-test the configured Windows NSIS package from a Windows build environment.
+- [x] Inspect the interrupted Windows packaging output and, if complete enough to run, prepare a clearly labelled downloadable portable Windows archive.
+- [x] Validate the portable archive contents and provide exact Windows launch, security, and limitation guidance.
+- [ ] Confirm the portable Windows archive launches successfully on a real Windows machine and completes the shared-backend OAuth flow.
+- [x] Remove browser-only Receiver hardware diagnostics, WebGPU messaging, and hardware registration from the browser-facing workspace.
+- [x] Retain browser Receiver Job History and Earnings & Analytics while directing pending-job acceptance to the downloadable desktop application.
+- [x] Add a pinned top-of-dashboard receiver assignment panel with assignment details, progress, and only desktop-reported runtime RAM/VRAM telemetry.
+- [x] Preserve truthful unavailable states when no connected desktop receiver reports runtime resource telemetry.
+- [x] Add regression coverage and visual validation for the browser receiver desktop-handoff experience.
+- [x] Prepare and validate a complete NeuroSync source archive excluding secrets, node_modules, build outputs, and local machine artifacts.
+- [x] Deliver the complete source archive with setup instructions for web and Electron development.
+- [x] Audit and clean irrelevant template comments, stale documentation, debug-only artifacts, and submission metadata without removing required Manus/runtime integrations or falsifying provenance.
+- [x] Validate the cleaned source and refresh the downloadable source archive for hackathon submission.
+- [x] Update the legacy receiver-agent contract assertion to match the cleaned documentation wording, then rerun the full validation suite.
+- [x] Fix the Route C checkpoint label overlapping the migration detail box in the route diagram and verify readable responsive spacing.
+- [x] Fix the masked Start trial button label in the Premium access card and verify button contrast in the training configuration flow.
+- [x] Refresh and validate final source and portable desktop ZIP archives from the latest checkpoint, then deliver both files.
+- [x] Fix the masked Download NeuroSync Desktop button label and verify the browser receiver handoff button contrast.

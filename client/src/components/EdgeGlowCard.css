@@ -1,0 +1,53 @@
+.edge-glow-card {
+  --edge-strength: 0;
+  position: relative;
+  isolation: isolate;
+  border-radius: 1rem;
+  outline: none;
+}
+
+.edge-glow-card::before,
+.edge-glow-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  transition: opacity 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.edge-glow-card::before {
+  background: radial-gradient(15rem circle at 50% 0%, rgba(247, 240, 229, 0.22), rgba(215, 200, 182, 0.08) 30%, transparent 67%);
+  opacity: calc(var(--edge-strength) * 0.7);
+  filter: blur(12px);
+}
+
+.edge-glow-card::after {
+  border: 1px solid rgba(247, 240, 229, calc(0.14 + var(--edge-strength) * 0.46));
+  opacity: calc(0.35 + var(--edge-strength) * 0.5);
+}
+
+.edge-glow-card__surface {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  transition: box-shadow 180ms cubic-bezier(0.23, 1, 0.32, 1), border-color 180ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.edge-glow-card:hover .edge-glow-card__surface,
+.edge-glow-card:focus-visible .edge-glow-card__surface {
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.32);
+}
+
+.edge-glow-card:focus-visible .edge-glow-card__surface {
+  box-shadow: 0 0 0 2px #090909, 0 0 0 4px rgba(247, 240, 229, 0.92), 0 16px 30px rgba(0, 0, 0, 0.32);
+}
+
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  .edge-glow-card::before { opacity: 0; }
+  .edge-glow-card::before,
+  .edge-glow-card::after,
+  .edge-glow-card__surface { transition: none; }
+  .edge-glow-card:hover .edge-glow-card__surface { box-shadow: none; }
+}

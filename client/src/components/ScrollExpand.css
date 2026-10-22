@@ -1,0 +1,21 @@
+.scroll-expand {
+  --scroll-expand: 0;
+  display: grid;
+  place-items: center;
+  overflow: visible;
+}
+
+.scroll-expand__panel {
+  width: calc(88% + var(--scroll-expand) * 12%);
+  transform: scale(calc(0.95 + var(--scroll-expand) * 0.05));
+  transform-origin: center top;
+  transition: width 80ms linear, transform 80ms linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-expand__panel {
+    width: 100%;
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,22 @@
+.strands-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: transparent;
+}
+
+.strands-container canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.strands-static {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background:
+    radial-gradient(ellipse at 15% 58%, rgba(255, 255, 255, 0.72) 0 1px, transparent 2px),
+    linear-gradient(159deg, transparent 25%, rgba(247, 240, 229, 0.5) 44%, transparent 45%),
+    linear-gradient(174deg, transparent 32%, rgba(215, 200, 182, 0.42) 47%, transparent 48%);
+}

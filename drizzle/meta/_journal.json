@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787254329174,
+      "tag": "0000_nosy_lilith",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787282519331,
+      "tag": "0001_chief_lyja",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787283062633,
+      "tag": "0002_stiff_edwin_jarvis",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787324877512,
+      "tag": "0003_pale_human_cannonball",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1787325761036,
+      "tag": "0004_sturdy_silk_fever",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1787342256785,
+      "tag": "0005_wet_trish_tilby",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1787342940855,
+      "tag": "0006_glorious_invaders",
+      "breakpoints": true
+    }
+  ]
+}
